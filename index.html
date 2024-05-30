@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Ecosystem Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="title">
+            <div class="h-1">BITO ordinals quiz</div>
+            <img class="image-icon" src="image-icon0.png" />
+        </div>
+        <div class="subtitle">
+            <div id="question-container" class="h-2"></div>
+        </div>
+        <div class="divider"></div>
+        <div id="answer-container" class="answers"></div>
+        <div class="divider2"></div>
+        <div class="progress-container">
+            <div class="buttons">
+                <div class="previous-button" id="prev-button" onclick="prevQuestion()">
+                    <div class="previous-button-text">Prev</div>
+                </div>
+                <div class="next-button" id="next-button" onclick="nextQuestion()">
+                    <div class="next-button-text">Next</div>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div id="progress-bar" class="progress-bar-filled"></div>
+            </div>
+        </div>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
