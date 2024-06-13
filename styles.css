@@ -78,6 +78,7 @@ body {
     color: #ffffff;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 40px;
+    line-height: 38px;
     text-align: left; /* Left align question */
     width: 100%;
 }

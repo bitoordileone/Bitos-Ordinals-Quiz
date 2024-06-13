@@ -1,34 +1,84 @@
 const questions = [
     {
-        question: "What is a Bitcoin Ordinal?",
-        options: ["A type of Bitcoin transaction", "A unique identifier for Bitcoin UTXOs", "A protocol for smart contracts on Bitcoin", "A new cryptocurrency"],
-        answer: 1
-    },
-    {
-        question: "BRC-20 is a standard for what type of tokens?",
-        options: ["Fungible tokens on Ethereum", "Non-fungible tokens on Ethereum", "Fungible tokens on Bitcoin", "Non-fungible tokens on Bitcoin"],
+        question: "What is the main purpose of Bitcoin Ordinals?",
+        options: ["To increase Bitcoin transaction speed", "To create a fungible token on Bitcoin", "To track and trade individual satoshis", "To enhance Bitcoin's privacy features"],
         answer: 2
     },
     {
-        question: "Which of the following best describes Runes?",
-        options: ["A type of blockchain consensus mechanism", "A protocol for issuing tokens on Bitcoin", "A decentralized exchange on Bitcoin", "A layer-2 scaling solution for Bitcoin"],
+        question: "What is the BRC-20 standard used for?",
+        options: ["Non-fungible tokens on Bitcoin", "Fungible tokens on Bitcoin", "Smart contracts on Bitcoin", "Privacy transactions on Bitcoin"],
         answer: 1
     },
     {
-        question: "Which year was Bitcoin created?",
-        options: ["2007", "2008", "2009", "2010"],
-        answer: 2  // Corrected to index 2 for "2009"
+        question: "What does WAGMI stand for?",
+        options: ["Whales Are Generously Manipulating Investments", "Wise Assets, Great Monetary Investments", "We're All Gonna Make It", "We’re Actually Gambling, Maybe Ignorantly"],
+        answer: 2
     },
     {
-        question: "What is the primary purpose of the Lightning Network?",
-        options: ["To increase Bitcoin's transaction speed and scalability", "To provide privacy features for Bitcoin transactions", "To allow the creation of smart contracts on Bitcoin", "To enable cross-chain transactions between Bitcoin and Ethereum"],
+        question: "What does DMT-NAT stand for?",
+        options: ["Digital Magic Tokens - Nobody Actually Trades", "Drastically Misunderstood Technology - Never Admits Truth", "Digital Matter Theory - Non-Arbitrary Tokens ", "Decentralized Monetary Transactions - Non-Arbitrary Trades"],
+        answer: 2
+    },
+    {
+        question: "Who introduced the concept of Bitcoin Ordinals?",
+        options: ["Satoshi Nakamoto", "Vitalik Buterin", "Casey Rodarmor", "Gavin Andresen"],
+        answer: 2
+    },
+    {
+        question: "What was the first country to adopt Bitcoin as legal tender?",
+        options: ["Argentina", "San Marino", "Luxembourg", "El Salvador"],
+        answer: 3
+    },
+    {
+        question: "What is the supply of Bitmap?",
+        options: ["As much as there are Ordinal Inscriptions.", "As much as there are Bitcoin Blocks.", "As much as the Bitcoin in circulation.", "As much as the Satoshis in Circulation."],
+        answer: 1
+    },
+    {
+        question: "When was Inscription 0 created?",
+        options: ["December 9th 2022", "December 14th 2022", "January 21st 2023", "February 14th 2023"],
+        answer: 1
+    },
+    {
+        question: "How many confirmations are generally recommended to consider a Bitcoin transaction final and irreversible?",
+        options: ["1 confirmation", "3 confirmations", "6 confirmations", "10 confirmations"],
+        answer: 2
+    },
+    {
+        question: "Who was the first person to receive a Bitcoin transaction from Satoshi Nakamoto?",
+        options: ["Hal Finney", "Nick Szabo", "Adam Back", "Wei Dai"],
         answer: 0
     },
     {
-        question: "Who is the pseudonymous creator of Bitcoin?",
-        options: ["Vitalik Buterin", "Charlie Lee", "Satoshi Nakamoto", "Hal Finney"],
-        answer: 2  // Corrected to index 2 for "Satoshi Nakamoto"
-    }
+        question: "What does the term “whale” refer to in the Bitcoin world?",
+        options: ["A large sea mammal with a Bitcoin logo", "A person who holds a large amount of Bitcoin", "An underwater Bitcoin mining operation", "A crypto-themed aquatic park"],
+        answer: 1
+    },
+    {
+        question: "What is the purpose of Bitmap according to the Bitmap Theory?",
+        options: ["To speed up Bitcoin transactions", "To create a decentralized virtual world on the Bitcoin blockchain", "To enhance Bitcoin's privacy features", "To develop new Bitcoin-based tokens"],
+        answer: 1
+    },
+    {
+        question: "What was the text of the message that Satoshi Nakamoto embedded in the first ever Bitcoin block?",
+        options: ["The Times 03/Jan/2009 Bitcoin: A Peer-to-Peer Electronic Cash System", "The Times 03/Jan/2009 If you don’t believe it or don’t get it, I don’t have the time to try to convince you, sorry.", "The Times 03/Jan/2009 The beginning of the decentralization of finance", "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks."],
+        answer: 3
+    },
+    {
+        question: "Which Bitcoin feature ensures only 21 million coins will ever exist?",
+        options: ["Proof of Work", "Halving events", "Mining difficulty adjustment", "Blockchain immutability"],
+        answer: 1
+    },
+    {
+        question: "What is the main function of Bitcoin's mempool?",
+        options: ["To store Bitcoin permanently", "To generate new Bitcoin addresses", "To hold unconfirmed transactions", "To track Bitcoin price movements"],
+        answer: 2
+    },
+    {
+        question: "Who first managed to inscribe on a Rare Sat?",
+        options: ["Mystic Pepe (@Mystic_Pepe)", "CTRL (@SeizeCTRL)", "BTC Machine (@btcordinal)", "wizardz (@wizardzBTC)"],
+        answer: 1
+    },
 ];
 
 let currentQuestion = 0;
