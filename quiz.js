@@ -185,7 +185,7 @@ function shareResults() {
     };
 
     const imageUrl = imageUrls[scoreLevel]; // Get the image URL for the current score level
-    const tweetText = `I scored ${scoreLevel}/6 (${scoreWord}) on Bito's Ordinals Quiz! Open @bitoordileone and see if you are Ordinals OG!`;
+    const tweetText = `I scored ${scoreLevel}/6 (${scoreWord}) on @bitoordileone Ordinals Quiz! Can you do better anon? Tast your knowledge https://bitoordileone.github.io/Bitos-Ordinals-Quiz/`;
     const encodedTweetText = encodeURIComponent(tweetText);
     const tweetUrl = `https://twitter.com/intent/tweet?text=${encodedTweetText}%20${encodeURIComponent(imageUrl)}`;
     window.open(tweetUrl, '_blank');
