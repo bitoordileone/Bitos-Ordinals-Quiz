@@ -1,27 +1,12 @@
 const questions = [
     {
-        question: "What is the main purpose of Bitcoin Ordinals?",
-        options: ["To increase Bitcoin transaction speed", "To create a fungible token on Bitcoin", "To track and trade individual satoshis", "To enhance Bitcoin's privacy features"],
-        answer: 2
-    },
-    {
         question: "What is the BRC-20 standard used for?",
         options: ["Non-fungible tokens on Bitcoin", "Fungible tokens on Bitcoin", "Smart contracts on Bitcoin", "Privacy transactions on Bitcoin"],
         answer: 1
     },
     {
-        question: "What does WAGMI stand for?",
-        options: ["Whales Are Generously Manipulating Investments", "Wise Assets, Great Monetary Investments", "We're All Gonna Make It", "We’re Actually Gambling, Maybe Ignorantly"],
-        answer: 2
-    },
-    {
         question: "What does DMT-NAT stand for?",
-        options: ["Digital Magic Tokens - Nobody Actually Trades", "Drastically Misunderstood Technology - Never Admits Truth", "Digital Matter Theory - Non-Arbitrary Tokens ", "Decentralized Monetary Transactions - Non-Arbitrary Trades"],
-        answer: 2
-    },
-    {
-        question: "Who introduced the concept of Bitcoin Ordinals?",
-        options: ["Satoshi Nakamoto", "Vitalik Buterin", "Casey Rodarmor", "Gavin Andresen"],
+        options: ["Digital Magic Tokens - Nobody Actually Trades", "Drastically Misunderstood Technology - Never Admits Truth", "Digital Matter Theory - Non-Arbitrary Tokens", "Decentralized Monetary Transactions - Non-Arbitrary Trades"],
         answer: 2
     },
     {
@@ -35,24 +20,19 @@ const questions = [
         answer: 1
     },
     {
+        question: "What is the main purpose of Bitcoin Ordinals?",
+        options: ["To increase Bitcoin transaction speed", "To create a fungible token on Bitcoin", "To track and trade individual satoshis", "To enhance Bitcoin's privacy features"],
+        answer: 2
+    },
+    {
         question: "When was Inscription 0 created?",
         options: ["December 9th 2022", "December 14th 2022", "January 21st 2023", "February 14th 2023"],
         answer: 1
     },
     {
-        question: "How many confirmations are generally recommended to consider a Bitcoin transaction final and irreversible?",
-        options: ["1 confirmation", "3 confirmations", "6 confirmations", "10 confirmations"],
-        answer: 2
-    },
-    {
         question: "Who was the first person to receive a Bitcoin transaction from Satoshi Nakamoto?",
         options: ["Hal Finney", "Nick Szabo", "Adam Back", "Wei Dai"],
         answer: 0
-    },
-    {
-        question: "What does the term “whale” refer to in the Bitcoin world?",
-        options: ["A large sea mammal with a Bitcoin logo", "A person who holds a large amount of Bitcoin", "An underwater Bitcoin mining operation", "A crypto-themed aquatic park"],
-        answer: 1
     },
     {
         question: "What is the purpose of Bitmap according to the Bitmap Theory?",
@@ -65,19 +45,9 @@ const questions = [
         answer: 3
     },
     {
-        question: "Which Bitcoin feature ensures only 21 million coins will ever exist?",
-        options: ["Proof of Work", "Halving events", "Mining difficulty adjustment", "Blockchain immutability"],
-        answer: 1
-    },
-    {
         question: "What is the main function of Bitcoin's mempool?",
         options: ["To store Bitcoin permanently", "To generate new Bitcoin addresses", "To hold unconfirmed transactions", "To track Bitcoin price movements"],
         answer: 2
-    },
-    {
-        question: "Who first managed to inscribe on a Rare Sat?",
-        options: ["Mystic Pepe (@Mystic_Pepe)", "CTRL (@SeizeCTRL)", "BTC Machine (@btcordinal)", "wizardz (@wizardzBTC)"],
-        answer: 1
     },
 ];
 
@@ -127,7 +97,6 @@ function nextQuestion() {
     const selectedOption = Array.from(document.querySelectorAll('.radio-button')).find(button => button.dataset.selected);
     if (selectedOption) {
         const selectedAnswerIndex = parseInt(selectedOption.dataset.index);
-        console.log(`Selected Answer Index: ${selectedAnswerIndex}, Correct Answer Index: ${questions[currentQuestion].answer}`);
         if (selectedAnswerIndex === questions[currentQuestion].answer) {
             score++;
         }
@@ -151,12 +120,16 @@ function prevQuestion() {
 
 function showResults() {
     const totalQuestions = questions.length;
-    const scoreLevel = Math.floor((score / totalQuestions) * 6) + 1; // Ensure scoreLevel is 6 when score is 6/6
-    const scoreWord = ["Normie", "Noob", "Reply Guy", "Degen", "Ordinals OG", "You are Casey Rodarmor"][scoreLevel - 1];
-    const imageUrl = `results-image${scoreLevel}.jpg`;
+    // Mapping the score out of 10 to 6 levels
+    const levelMap = Math.ceil((score / totalQuestions) * 6); // Scale 0-10 to 1-6
+    const scoreLevel = Math.min(levelMap, 6); // Ensure scoreLevel is within 1-6
+    const scoreWords = ["Normie", "Noob", "Reply Guy", "Degen", "Ordinals OG", "Casey Rodarmor"];
+    const scoreWord = scoreWords[scoreLevel - 1]; // Map score level to words
+    const imageUrl = `results-image${scoreLevel}.jpg`; // Assuming image filenames are results-image1.jpg, ..., results-image6.jpg
 
-    console.log(`Score: ${score}, Score Level: ${scoreLevel}, Score Word: ${scoreWord}`); // Debugging log
+    console.log(`Score: ${score}, Score Level: ${scoreLevel}, Score Word: ${scoreWord}`);
 
+    localStorage.setItem('score', score); // Store the raw score out of 10
     localStorage.setItem('scoreLevel', scoreLevel);
     localStorage.setItem('scoreWord', scoreWord);
     localStorage.setItem('imageUrl', imageUrl);
@@ -174,18 +147,17 @@ function shareResults() {
     const scoreLevel = localStorage.getItem('scoreLevel');
     const scoreWord = localStorage.getItem('scoreWord');
 
-    // Define the image URLs for each score level
     const imageUrls = {
-        1: "pic.twitter.com/gyAa48dizO", // Replace with the actual tweet URL for image 1
-        2: "pic.twitter.com/hijf9Zx6kw", // Replace with the actual tweet URL for image 2
-        3: "pic.twitter.com/Az301fVf4D", // Replace with the actual tweet URL for image 3
-        4: "pic.twitter.com/vHeefX1nYR", // Replace with the actual tweet URL for image 4
-        5: "pic.twitter.com/xt5VJ6cqzg", // Replace with the actual tweet URL for image 5
-        6: "pic.twitter.com/MLQR8rWG9x"  // Replace with the actual tweet URL for image 6
+        1: "pic.twitter.com/r8FHcmrXYW",
+        2: "pic.twitter.com/kwQgVZaHxY",
+        3: "pic.twitter.com/Xv6PmGEB4t",
+        4: "pic.twitter.com/chWwtB5gwq",
+        5: "pic.twitter.com/hsxKCoZCjo",
+        6: "pic.twitter.com/JpmiU1Z2G1"
     };
 
-    const imageUrl = imageUrls[scoreLevel]; // Get the image URL for the current score level
-    const tweetText = `I scored ${scoreLevel}/6 (${scoreWord}) on @bitoordileone Ordinals Quiz! Can you do better anon? Tast your knowledge`;
+    const imageUrl = imageUrls[scoreLevel] || "pic.twitter.com/A4x55Msq2r";
+    const tweetText = `I am "${scoreWord}" on @bitoordileone Ordinals Quiz! Can you do better anon? Test your knowledge https://bitoordileone.github.io/Bitos-Ordinals-Quiz/ and share the result!`;
     const encodedTweetText = encodeURIComponent(tweetText);
     const tweetUrl = `https://twitter.com/intent/tweet?text=${encodedTweetText}%20${encodeURIComponent(imageUrl)}`;
     window.open(tweetUrl, '_blank');
@@ -222,14 +194,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const scoreWord = localStorage.getItem('scoreWord');
         const imageUrl = localStorage.getItem('imageUrl');
         if (scoreLevel && scoreWord && imageUrl) {
-            document.getElementById('results-level').innerText = `${scoreLevel}/6`;
+            // Hide the results-level element if it exists
+            const resultsLevel = document.getElementById('results-level');
+            if (resultsLevel) {
+                resultsLevel.style.display = 'none'; // Hide the element
+            }
+            // Display the score word and image
             document.getElementById('results-word').innerText = scoreWord;
             document.querySelector('.results-image').src = imageUrl;
         } else {
-            // If for some reason the data is missing, redirect to start over
             startOver();
         }
     } else {
         showQuestion(currentQuestion);
     }
 });
+
